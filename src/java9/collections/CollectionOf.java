@@ -1,7 +1,6 @@
 package java9.collections;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class CollectionOf {
