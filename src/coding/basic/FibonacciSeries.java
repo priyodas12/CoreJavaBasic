@@ -11,7 +11,7 @@ public class FibonacciSeries {
         var b = 1;
         var c = 1;
         for (int i = 1; i <= n; i++) {
-            System.out.print(a + ", ");
+            System.out.print(i==n?a:a+",");
 
             a = b;
             b = c;
