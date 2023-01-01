@@ -1,6 +1,7 @@
 package dataStructure;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BinaryTreeTraverse1 {
@@ -18,8 +19,9 @@ public class BinaryTreeTraverse1 {
             System.out.println("Current Node Value: "+current.val);
             results.add(current);
 
-            if(current.left!=null) listNode.add(current.left);
             if(current.right!=null) listNode.add(current.right);
+            if(current.left!=null) listNode.add(current.left);
+            listNode.stream().forEach(i-> System.out.println("listNode :"+i.val));
         }
         return results;
     }
@@ -39,8 +41,8 @@ public class BinaryTreeTraverse1 {
         b.left=d;
         b.right=e;
 
-        d.left=f;
-        d.right=g;
+        c.left=f;
+        c.right=g;
 
         getTreeAsArray(a).stream().map(n->n.val).forEach(System.out::println);
 
