@@ -21,6 +21,31 @@ public class BinaryTreeTraverse2 {
         }
         return results;
     }
+
+    public static boolean  findNode(Node root,Node element){
+        boolean result = true;
+        if(root==null){
+            result=false;
+        }
+        else if(root.left!=null){
+           if(element.val==root.left.val) {
+               System.out.println("left: "+root.right.val);
+               result=true;
+           }else{
+               result=findNode(root.left,element);
+           }
+        }
+        else if(root.right!=null){
+            if(element.val==root.right.val) {
+                System.out.println("right: "+root.right.val);
+                result=true;
+            }
+            else{
+                result=findNode(root.right,element);
+            }
+        }
+        return result;
+    }
     public static void main(String[] args) {
 
         Node a=new Node(10);
@@ -40,7 +65,9 @@ public class BinaryTreeTraverse2 {
         c.left=f;
         c.right=g;
 
-        getAllElementsByRecursion(a).stream().forEach(i-> System.out.println("Element: "+i));
+        //getAllElementsByRecursion(a).stream().forEach(i-> System.out.println("Element: "+i));
+
+        System.out.println(findNode(a,new Node(70)));
 
     }
 }
