@@ -1,4 +1,4 @@
-package java8;
+package java8.defaultMethod;
 
 public interface DemoInterfaceTwo {
     public void m2();

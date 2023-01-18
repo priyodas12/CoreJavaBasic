@@ -1,6 +1,6 @@
-package java8;
+package java8.defaultMethod;
 
-public class DefaultMethodEvaluation implements DemoInterfaceTwo,DemoInterfaceOne {
+public class DefaultMethodEvaluation implements DemoInterfaceTwo, DemoInterfaceOne {
 
     @Override
     public void m1() {
