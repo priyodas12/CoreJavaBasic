@@ -8,7 +8,9 @@ public class FixedThreadPoolExecutorsImpl {
     public static void main(String[] args) {
         System.out.println(Thread.currentThread().getName()+" starts");
         ExecutorService exe=Executors.newFixedThreadPool(8);
-        exe.submit(new LoopTaskA());
+        for(int j=0;j<3;j++){
+            exe.execute(new LoopTaskA());
+        }
         exe.shutdown();
         System.out.println(Thread.currentThread().getName()+" ends");
     }
