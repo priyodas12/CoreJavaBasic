@@ -1,5 +1,6 @@
 package threads;
 
+import java.util.Timer;
 import java.util.concurrent.TimeUnit;
 
 public class MasterNode {
@@ -52,6 +53,7 @@ class WorkerNode1{
     }
 }
 class WorkerNode2{
+
     public void executeTask() throws InterruptedException {
         for (int i = 0; i <10 ; i++) {
             TimeUnit.MILLISECONDS.sleep(100);
@@ -61,8 +63,14 @@ class WorkerNode2{
 }
 
 class ParallelWorkerNode1 extends Thread{
+
+    public ParallelWorkerNode1() {
+        System.out.println("ParallelWorkerNode1:: "+Thread.currentThread().getState());
+    }
+
     @Override
     public void run() {
+        System.out.println("ParallelWorkerNode1:: "+Thread.currentThread().getState());
         for (int i = 0; i <10 ; i++) {
             try {
                 TimeUnit.MILLISECONDS.sleep(100);
@@ -72,11 +80,18 @@ class ParallelWorkerNode1 extends Thread{
             System.out.println(this.getClass()+" executing task number"+i);
         }
     }
+
+
 }
 
 class ParallelWorkerNode2 extends Thread{
+
+    public ParallelWorkerNode2() {
+        System.out.println("ParallelWorkerNode2:: "+Thread.currentThread().getState());
+    }
     @Override
     public void run() {
+        System.out.println("ParallelWorkerNode2:: "+Thread.currentThread().getState());
         for (int i = 0; i <10 ; i++) {
             try {
                 TimeUnit.MILLISECONDS.sleep(100);
